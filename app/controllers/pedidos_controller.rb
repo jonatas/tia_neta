@@ -24,6 +24,7 @@ class PedidosController < ApplicationController
   # GET /pedidos/new.xml
   def new
     @pedido = Pedido.new
+    @pedido.numero = Pedido.maximum('numero').next
     4.times { @pedido.pedidos_produtos.build  }
 
     respond_to do |format|

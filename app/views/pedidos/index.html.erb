@@ -4,14 +4,15 @@
   <tr>
     <th>Número</th>
     <th>Cliente</th>
-    <th>Observação</th>
+    <th>Criado em</th>
   </tr>
 
 <% @pedidos.each do |pedido| %>
   <tr>
     <td><%=h pedido.numero %></td>
     <td><%=h pedido.cliente %></td>
-    <td><%=h pedido.observacao %></td>
+    <td><%=h pedido.data %></td>
+
     <td><%= link_to 'Mostrar detalhes', pedido %></td>
     <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
     <td><%= link_to 'Excluir', pedido, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></td>

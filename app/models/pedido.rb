@@ -1,7 +1,14 @@
 class Pedido < ActiveRecord::Base
+
   has_many :pedidos_produtos, :class_name => 'PedidoProduto', :autosave => true
   validates_associated :pedidos_produtos
+
+  liquid_methods :pedidos_produtos, :data, :cliente, :numero
   
+  def data
+    created_at.strftime("%d/%m/%y %H:%M")
+  end
+
   def new_pedido_produto_attributes=(atributo_pedido_produto)
     atributo_pedido_produto.each do |pedido_produto|
       next if pedido_produto[:produto_id].blank?
