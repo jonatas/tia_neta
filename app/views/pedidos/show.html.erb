@@ -1,0 +1,42 @@
+<p>
+  <b>Número:</b>
+  <%=h @pedido.numero %>
+</p>
+<p>
+  <b>Criado em:</b>
+  <%=h @pedido.created_at.strftime("%D/%M/%Y")%>
+</p>
+
+<p>
+  <b>Cliente:</b>
+  <%=h @pedido.cliente %>
+</p>
+<table border="1" cellpadding="1">
+  <tr>
+    <th>Produto</th>
+    <th>Cor</th>
+    <th>Quantidade</th>
+    <th>Tamanho</th>
+    <th>Observação</th>
+  </tr>
+  <% for item in @pedido.pedidos_produtos %>
+    <tr>
+      <td><%= item.produto %> </td>
+      <td><%= item.cor %> </td>
+      <td><%= item.quantidade %> </td>
+      <td><%= item.tamanho %> </td>
+      <td><%= item.observacao %> </td>
+    </tr>
+  <% end %>
+
+</table>
+
+<p>
+  <b>Observação:</b>
+  <%=h @pedido.observacao %>
+</p>
+
+
+<%= link_to 'Alterar Pedido', edit_pedido_path(@pedido) %> |
+<%= link_to 'Listagem de Pedidos', pedidos_path %> | 
+<%= link_to 'Lançar um novo pedido', new_pedido_path %>

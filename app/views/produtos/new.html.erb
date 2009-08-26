@@ -1,0 +1,10 @@
+<h1>Cadastro de produtos - você está cadastrando um novo produto</h1>
+
+<% form_for(@produto) do |f| %>
+  <%= render :partial => 'campos', :locals => { :f => f } %>
+  <p>
+    <%= f.submit 'Adicionar produto' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar Para Listagem de Produtos', produtos_path %>

@@ -1,0 +1,10 @@
+<h1>Cadastrando um novo pedido</h1>
+
+<% form_for(@pedido) do |f| %>
+  <%= render :partial => 'campos', :locals => { :f => f } %>
+  <p>
+    <%= f.submit 'Cadastrar Pedido' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', pedidos_path %>

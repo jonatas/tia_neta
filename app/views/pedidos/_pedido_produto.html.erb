@@ -1,0 +1,19 @@
+<% fields_for_pedido_produto(pedido_produto) do |pedido_produto_form| %>
+  <% @pedido_produto = pedido_produto_form.object %>
+  <%= error_messages_for :pedido_produto %>
+  <tr class="pedido_produto">
+    <td><%= pedido_produto_form.text_field(:produto_id, 
+                  :onchange => "elemento = this.up().next(); "+remote_function(
+                    :url => {:action => 'search', 
+                      :controller => 'produtos'}, 
+                      :with => "'id='+this.value", 
+                      :complete => "elemento.innerHTML = request.responseText")) %></td>
+
+    <td><%= @pedido_produto.produto %> </td>
+    <td><%= pedido_produto_form.text_field :cor %></td>
+    <td><%= pedido_produto_form.text_field :quantidade %></td>
+    <td><%= pedido_produto_form.text_field :tamanho %></td>
+    <td><%= pedido_produto_form.text_field :observacao %></td>
+    <td><%= link_to_function "Excluir", "this.up('.pedido_produto').remove()" %></td>
+  </tr>
+<% end %>

@@ -1,0 +1,22 @@
+<h1>Listagem produtos</h1>
+
+<table>
+  <tr>
+    <th>Referência</th>
+    <th>Descrição</th>
+  </tr>
+
+<% @produtos.each do |produto| %>
+  <tr>
+    <td><%=h produto.id %></td>
+    <td><%=h produto.descricao %></td>
+    <td><%= link_to 'Exibir Detalhes', produto %></td>
+    <td><%= link_to 'Alterar Produto', edit_produto_path(produto) %></td>
+    <td><%= link_to 'Apagar', produto, :confirm => 'Você tem certeza que deseja apagar este produto?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Cadastrar um novo produto', new_produto_path %>

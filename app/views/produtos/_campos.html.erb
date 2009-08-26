@@ -1,0 +1,13 @@
+<%= f.error_messages %>
+<p>
+  <%= f.label :id, "Referência" %><br />
+  <%= f.text_field :id %>
+</p>
+<p>
+  <%= f.label :descricao , "Descrição" %><br />
+  <%= f.text_field :descricao %>
+</p>
+<div id="cores">
+    <%= render :partial => 'cor', :collection => @produto.cores %>
+</div>
+<p><%= add_cor_link "Adicionar cor" %></p>

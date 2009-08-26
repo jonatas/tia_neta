@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pedido_produto: 
+  cor: 
+  quantidade: 1
+
+two:
+  pedido_produto: 
+  cor: 
+  quantidade: 1

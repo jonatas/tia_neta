@@ -1,0 +1,18 @@
+<p>
+  <b>Referência:</b>
+  <%=h @produto.id %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%=h @produto.descricao %>
+</p>
+<p>
+  <b>Cores Disponíveis:</b>
+  <%=h @produto.cores.collect{|cor|cor.descricao}.join(", ") %>
+</p>
+
+
+<%= link_to 'Editar', edit_produto_path(@produto) %> |
+<%= link_to 'Voltar', produtos_path %> | 
+<%= link_to 'Cadastrar um novo produto', new_produto_path %>

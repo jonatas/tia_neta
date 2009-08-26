@@ -1,0 +1,8 @@
+<div class="cor">
+  <% fields_for_cor(cor) do |cor_form| %>
+     <p>
+       Cor: <%= cor_form.text_field :descricao %>
+       <%= link_to_function "Excluir Cor", "$(this).up('.cor').remove()" %>
+     </p>
+ <% end %>
+</div>

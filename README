@@ -1,0 +1,43 @@
+== Tia Neta
+
+Este programa tem o objetivo de ajudar a Tia Neta a organizar os pedidos da Lamesi.
+
+A tia está com um monte de pedidos e precisa organizar de forma que consiga visualizar as peças separadas para poder cortar.
+
+Essas peças tem uma referência e uma descrição e pode está disponível em várias cores e tamanhos. 
+
+Este sistema tem basicamente 2 funcionalidades:
+
+
+== Lançar Pedidos
+
+   Um pedido é feito geralmente pelos viajantes e passado para o Biba que agrupa e entrega para a Neta gerenciar os cortes e passar para as costureiras as suas tarefas.
+   Um pedido básicamente encontra-se em uma data, é feito para uma pessoa e contém vários items descriminados.
+   Cada item deve ter uma ou mais quantidades e tamanhos.
+
+# Tarefas
+# Cadastro de produtos
+## referência unica
+## descrição 
+## muitas cores
+
+## Lançar o pedido 
+## cliente 
+## observação 
+## data + número automático
+## Itens
+## Referência
+data: hoje            número: automático 
+cliente: nome do figura
+-- itens --
+ref - cor - quantidade - tamanho - obs
+
+
+== Imprimir Lista de Pedidos por Referência
+  
+   Deve ser possível tirar uma relação dos itens dos pedidos agrupados por referência. 
+
+== Resumo das tarefas
+# Planejamento # 1 hora
+# Cadastro de produtos # ok - 2 horas
+# Cadastro de pedidos # ok - 2 horas

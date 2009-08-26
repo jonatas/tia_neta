@@ -1,0 +1,26 @@
+<hr>
+<%= f.error_messages %>
+<table  cellpadding="3">
+  <tr>
+    <td><%= f.label :numero, "Número" %></td>
+    <td><%= f.text_field :numero, :size => 8 %></td>
+    <td><%= f.label :cliente %></td>
+    <td><%= f.text_field :cliente %></td>
+  </tr>
+</table>
+<table id="pedidos_produtos" border="1" cellpadding="1" width="100%"> 
+  <tr>
+    <th width="10%">Referência</th>
+    <th>Descrição Produto</th>
+    <th>Cor</th>
+    <th>Quantidade</th>
+    <th>Tamanho</th>
+    <th>Complemento</th>
+  </tr>
+  <%= render :partial => 'pedido_produto', :collection => @pedido.pedidos_produtos%>
+</table>
+<%= add_pedido_produto_link "Adicionar Outro Produto ao Pedido" %>
+<p>
+  <%= f.label :observacao, "Observação" %><br />
+  <%= f.text_area :observacao, :cols => 70, :rows => 2 %>
+</p>

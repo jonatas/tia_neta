@@ -1,0 +1,11 @@
+<h1>Alterando o pedido</h1>
+
+<% form_for(@pedido, :html => { :method => 'put' } ) do |f| %>
+  <%= render :partial => 'campos', :locals => {:f => f} %>
+  <p>
+    <%= f.submit 'Salvar o Pedido' %>
+  </p>
+<% end %>
+
+<%= link_to 'Mostrar Detalhes', @pedido %> |
+<%= link_to 'Voltar para a listagem de pedidos', pedidos_path %>

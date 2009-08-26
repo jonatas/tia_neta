@@ -1,0 +1,11 @@
+<h1>Editando produto</h1>
+<% form_for(@produto, :html => { :method => 'put' } ) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'campos', :locals => { :f => f } %>
+  <p>
+    <%= f.submit 'Alterar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @produto %> |
+<%= link_to 'Back', produtos_path %>
