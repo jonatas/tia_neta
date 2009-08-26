@@ -10,6 +10,10 @@ class PedidoProduto < ActiveRecord::Base
   validates_numericality_of :quantidade
   validates_presence_of :produto
 
+  def before_save
+    self.tamanho = self.tamanho.upcase
+   end
+
   def to_s
     "#{quantidade} ref: #{produto.id}(#{tamanho})- cor: #{cor}"
   end
