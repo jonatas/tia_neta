@@ -36,8 +36,3 @@ ref - cor - quantidade - tamanho - obs
 == Imprimir Lista de Pedidos por Referência
   
    Deve ser possível tirar uma relação dos itens dos pedidos agrupados por referência. 
-
-== Resumo das tarefas
-# Planejamento # 1 hora
-# Cadastro de produtos # ok - 2 horas
-# Cadastro de pedidos # ok - 2 horas
