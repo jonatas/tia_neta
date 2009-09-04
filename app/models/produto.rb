@@ -2,8 +2,6 @@ class Produto < ActiveRecord::Base
 
   has_and_belongs_to_many :cores, :uniq => true
   validates_associated :cores
-  liquid_methods :descricao, :id, :cores
-
 
   def new_cor_attributes=(atributo_cores)
     atributo_cores.each do |cor|

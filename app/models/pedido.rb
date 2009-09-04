@@ -3,8 +3,6 @@ class Pedido < ActiveRecord::Base
   has_many :pedidos_produtos, :class_name => 'PedidoProduto', :autosave => true
   validates_associated :pedidos_produtos
 
-  liquid_methods :pedidos_produtos, :data, :cliente, :numero
-  
   def data
     created_at.strftime("%d/%m/%y %H:%M")
   end

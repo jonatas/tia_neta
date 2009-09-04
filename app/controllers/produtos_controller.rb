@@ -49,7 +49,8 @@ class ProdutosController < ApplicationController
   # POST /produtos
   # POST /produtos.xml
   def create
-    @produto = Produto.new(params[:produto])
+    @produto = Produto.new
+    @produto.send(:attributes=,params[:produto], false)
 
     respond_to do |format|
       if @produto.save
