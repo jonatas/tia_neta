@@ -1,4 +1,5 @@
-<% form_tag :action=>"pedidos_produtos", :method=>"post" do %>
+
+<% form_tag :relatorios, :method => :get do %>
 <h1>Filtrar dados para relatório</h1>
 <p>
 Data de <%= text_field_tag :data_inicial %> até <%= text_field_tag :data_final %>
@@ -6,7 +7,16 @@ Data de <%= text_field_tag :data_inicial %> até <%= text_field_tag :data_final 
 <p>
 Filtrar Por Referência de Produto: <%= text_field_tag :produto_id %> <small>Exemplo: 1, 2, 34</small>
 </p>
-<%= submit_tag "Exibir Relatório de Pedidos Agrupado por Produto, Cor e Tamanho"  %>
+<p>
+Filtrar Por Cliente: <%= text_field_tag :cliente %>
+</p>
+<p>
+
+<%= submit_tag "Exibir Relatório de Pedidos Agrupado por Produto, Cor e Tamanho" %>
+</p>
+<p>
+<%= submit_tag "Exibir Relatório de Pedidos Que o Produto Pertence" %>
+</p>
 
 <% end %>
 

@@ -36,3 +36,18 @@ ref - cor - quantidade - tamanho - obs
 == Imprimir Lista de Pedidos por Referência
   
    Deve ser possível tirar uma relação dos itens dos pedidos agrupados por referência. 
+
+
+problema para imprimir relatorio as vezes - muda a forma da requisicao para get # ok
+
+adicionar complemento agrupado  no relatorio dos produtos agrupados # ok
+
+problema do deletar os pedidos erro do frozen hash
+
+relatorio de itens do pedido pelo produto # ok agrupado por cliente, cor, quantidade, tamanho 
+
+
+
+
+
+

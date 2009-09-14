@@ -13,6 +13,10 @@ class PedidoProduto < ActiveRecord::Base
     self.tamanho = self.tamanho.upcase
    end
 
+  def quantidade
+    super.to_i
+  end
+
   def to_s
     "#{quantidade} ref: #{produto.id}(#{tamanho})- cor: #{cor}"
   end

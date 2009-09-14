@@ -1,0 +1,86 @@
+
+<style type="text/css">
+  /* <![CDATA[ */
+  td {
+   text-align:center;
+  }
+  td.produto {
+   width: 40%; 
+  }
+  /* ]]> */
+</style>
+
+<h2>Relatório de produtos por cliente pedidos entre <%= params[:data_inicial] %> e <%= params[:data_final] %></h2>
+<table border="1" width="90%">
+  <thead>
+    <tr>
+      <td class="produto" >Descrição do Produto</td>
+      <td width="20%">
+        <table border="1" width="100%">
+          <tr>
+            <td class="cor" width="30%"> Cliente</td>
+            <td width="70%">
+              <table border="1" width="100%">
+                <tr>
+                  <td class="cor" width="30%"> Cor </td>
+                  <td width="70%">
+                    <table border="1" cellpadding="1" width="100%">
+                      <tr>
+                        <td width="30%">Quantidade</td>
+                        <td width="30%">Tamanho</td>
+                        <td width="40%">Observação</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </thead>
+  <% @pedidos_produtos.group_by{|p|p.produto}.each do |produto, itens| 
+    # next if produto.nil?
+  %>
+  <tr>
+    <td class="produto" ><%= produto %></td>
+    <td width="60%">
+      <table border="1" width="100%">
+        <% itens.group_by{|i|i.pedido.cliente}.each do |cliente, cor_qtdes_tamanhos | %>
+          <tr>
+            <td class="cor" width="30%"><%= cliente%></td>
+            <td width="70%">
+              <table border="1" width="100%">
+                <% cor_qtdes_tamanhos.group_by{|i|i.cor.descricao}.each do |cor, qtdes_tamanhos | %>
+                  <tr>
+                    <td class="cor" width="30%"><%= cor %></td>
+                    <td width="70%">
+                      <table border="1" width="100%">
+                        <% qtdes_tamanhos.group_by{|e|[e.tamanho.upcase, e.observacao]}.each do |tam_observacao, quantidades|
+                          tamanho, observacao = tam_observacao
+
+                        %>
+                        <tr>
+                          <td width="30%" class="quantidade"><%= quantidades.inject(0){|sum, it|sum += it.quantidade;sum}.to_i%></td> 
+                          <td width="30%" class="tamanho"><%= tamanho %></td> 
+                          <td width="40%" class="observacao"><%= observacao %></td> 
+                        </tr>
+                      <% end %> 
+                    </table>
+                  </td>
+                </tr>
+              <% end %> 
+            </table>
+          </td>
+        </tr>
+      <% end %> 
+    </table>
+  </td>
+</tr>
+  <% end %>
+</tr>
+</table>
+<small>
+  Pedidos agrupados por produto, cliente, cor, tamanho e observação.
+</small>

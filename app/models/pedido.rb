@@ -1,6 +1,6 @@
 class Pedido < ActiveRecord::Base
 
-  has_many :pedidos_produtos, :class_name => 'PedidoProduto', :autosave => true
+  has_many :pedidos_produtos, :class_name => 'PedidoProduto', :autosave => true, :dependent => :delete_all
   validates_associated :pedidos_produtos
 
   def data
